@@ -28,12 +28,12 @@ public actor Mocktail {
         return basePath
     }
     
-    public func provide<T: Decodable>(_ route: String, as type: T.Type) async throws -> T {
+    public func provide<T: Decodable>(from bundle: Bundle, _ route: String, as type: T.Type) async throws -> T {
         guard let fileName = mappings["\(route)"] else {
             throw NSError(domain: "Mocktail", code: 404, userInfo: [NSLocalizedDescriptionKey: "No mock registered for \(route)"])
         }
 
-        guard let data = MockResponseLoader.loadJSON(named: fileName) else {
+        guard let data = MockResponseLoader.loadJSON(named: fileName, from: bundle) else {
             throw NSError(domain: "Mocktail", code: 500, userInfo: [NSLocalizedDescriptionKey: "Failed to load mock file: \(fileName)"])
         }
 
