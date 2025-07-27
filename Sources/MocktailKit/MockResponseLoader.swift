@@ -11,7 +11,7 @@ public struct MockResponseLoader {
     private static let mockFolder = "MocktailJsonMaterial"
 
     public static func loadJSON(named fileName: String) -> Data? {
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: nil, subdirectory: mockFolder) else {
+        guard let url = Bundle.main.url(forResource: "employees", withExtension: "json", subdirectory: mockFolder) else {
             print("[Mocktail] ❌ File not found: \(mockFolder)/\(fileName)")
             return nil
         }
