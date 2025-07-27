@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct MocktailDemoApp: App {
+    
+    init() {
+        MocktailBootstrap.register()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(DemoViewModel())
         }
     }
 }

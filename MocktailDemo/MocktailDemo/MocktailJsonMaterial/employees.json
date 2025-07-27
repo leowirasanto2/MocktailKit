@@ -1,0 +1,27 @@
+[
+  {
+    "name": "John Smith",
+    "employee_id": "EMP001",
+    "role_id": "ROLE001"
+  },
+  {
+    "name": "Sarah Johnson",
+    "employee_id": "EMP002",
+    "role_id": "ROLE002"
+  },
+  {
+    "name": "Michael Brown",
+    "employee_id": "EMP003",
+    "role_id": "ROLE001"
+  },
+  {
+    "name": "Emily Davis",
+    "employee_id": "EMP004",
+    "role_id": "ROLE003"
+  },
+  {
+    "name": "David Wilson",
+    "employee_id": "EMP005",
+    "role_id": "ROLE002"
+  }
+]

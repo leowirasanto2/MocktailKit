@@ -1,0 +1,26 @@
+[
+  {
+    "role_id": "ROLE001",
+    "name": "Software Engineer"
+  },
+  {
+    "role_id": "ROLE002",
+    "name": "Product Manager"
+  },
+  {
+    "role_id": "ROLE003",
+    "name": "UI/UX Designer"
+  },
+  {
+    "role_id": "ROLE004",
+    "name": "Data Analyst"
+  },
+  {
+    "role_id": "ROLE005",
+    "name": "DevOps Engineer"
+  },
+  {
+    "role_id": "ROLE006",
+    "name": "QA Engineer"
+  }
+]

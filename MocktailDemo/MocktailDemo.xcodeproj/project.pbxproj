@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		608158AE2E36ADBE00C6E1BD /* MocktailKit in Frameworks */ = {isa = PBXBuildFile; productRef = 608158AD2E36ADBE00C6E1BD /* MocktailKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		6081589E2E36AC7F00C6E1BD /* MocktailDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MocktailDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				608158AE2E36ADBE00C6E1BD /* MocktailKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = MocktailDemo;
 			packageProductDependencies = (
+				608158AD2E36ADBE00C6E1BD /* MocktailKit */,
 			);
 			productName = MocktailDemo;
 			productReference = 6081589E2E36AC7F00C6E1BD /* MocktailDemo.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 608158952E36AC7F00C6E1BD;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				608158AC2E36ADBE00C6E1BD /* XCRemoteSwiftPackageReference "MocktailKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6081589F2E36AC7F00C6E1BD /* Products */;
 			projectDirPath = "";
@@ -324,6 +333,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		608158AC2E36ADBE00C6E1BD /* XCRemoteSwiftPackageReference "MocktailKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/leowirasanto2/MocktailKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		608158AD2E36ADBE00C6E1BD /* MocktailKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 608158AC2E36ADBE00C6E1BD /* XCRemoteSwiftPackageReference "MocktailKit" */;
+			productName = MocktailKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 608158962E36AC7F00C6E1BD /* Project object */;
 }

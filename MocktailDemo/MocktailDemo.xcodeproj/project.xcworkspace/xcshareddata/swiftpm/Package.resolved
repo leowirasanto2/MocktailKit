@@ -1,0 +1,15 @@
+{
+  "originHash" : "1696c062e571a891ea487026c367d481c273f98de66b2380bb3f9964596c921c",
+  "pins" : [
+    {
+      "identity" : "mocktailkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/leowirasanto2/MocktailKit",
+      "state" : {
+        "revision" : "8434104382780c089c3c311c823403e1aa2efb19",
+        "version" : "0.0.5"
+      }
+    }
+  ],
+  "version" : 3
+}
