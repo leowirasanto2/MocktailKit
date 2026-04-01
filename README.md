@@ -43,9 +43,17 @@ await Mocktail.shared.configure(mappings: [
 ])
 ```
 
-### 2. Serve mock data
+### 2. Add your JSON files
 
-Fetch and decode mock responses anywhere in your app:
+Place your mock JSON files in your app bundle (e.g. inside a `MocktailJsonMaterial/` folder) and make sure they are included in the target's bundle resources.
+
+---
+
+## Interception Modes
+
+### Option A — Manual `provide`
+
+Explicitly fetch and decode mock data by route:
 
 ```swift
 let employees: [Employee] = try await Mocktail.shared.provide(
@@ -55,15 +63,42 @@ let employees: [Employee] = try await Mocktail.shared.provide(
 )
 ```
 
-### 3. Add your JSON files
+### Option B — Transparent URLSession interception ✨
 
-Place your mock JSON files in your app bundle (e.g. inside a `MocktailJsonMaterial/` folder) and make sure they are included in the target's bundle resources.
+Activate interception once at startup and let `MockURLProtocol` handle the rest. Your existing `URLSession` code requires **zero changes** — registered paths return mock JSON automatically, everything else passes through to the real server.
+
+```swift
+// At app startup
+await Mocktail.shared.configure(mappings: [
+    "/v2/top-headlines": "top-news-mock.json"
+])
+await Mocktail.shared.activateInterception()
+
+// Your normal URLSession call — no changes needed
+let (data, _) = try await URLSession.shared.data(from: newsURL)
+// ↑ MockURLProtocol intercepts this and returns top-news-mock.json
+```
+
+Toggle mock on/off at runtime:
+
+```swift
+// Switch to live
+await Mocktail.shared.deactivateInterception()
+
+// Switch back to mock
+await Mocktail.shared.activateInterception()
+```
 
 ---
 
 ## Demo
 
-See the `MocktailDemo/` folder for a working example using the repository pattern, Combine, and SwiftUI.
+The `MocktailDemo/` app demonstrates both patterns side-by-side:
+
+- **Employee / Role demo** — uses `Mocktail.shared.provide()` (Option A)
+- **News demo** — uses transparent URLSession interception (Option B) with a live toggle between Mocktail and the real NewsAPI
+
+Open `MocktailKit.xcworkspace` at the repo root to run both the library and demo from a single Xcode window.
 
 ---
 
