@@ -28,6 +28,14 @@ public actor Mocktail {
         return basePath
     }
     
+    public func activateInterception() {
+        URLProtocol.registerClass(MockURLProtocol.self)
+    }
+
+    public func deactivateInterception() {
+        URLProtocol.unregisterClass(MockURLProtocol.self)
+    }
+
     public func provide<T: Decodable>(from bundle: Bundle, _ route: String, as type: T.Type) async throws -> T {
         guard let fileName = mappings["\(route)"] else {
             throw NSError(domain: "Mocktail", code: 404, userInfo: [NSLocalizedDescriptionKey: "No mock registered for \(route)"])

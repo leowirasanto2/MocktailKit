@@ -11,16 +11,16 @@ import MocktailKit
 public enum MocktailBootstrap {
     public static func register() {
         Task {
-            await Mocktail.shared.configure(
-                mappings: Self.loadMappings()
-            )
+            await Mocktail.shared.configure(mappings: Self.loadMappings())
+            await Mocktail.shared.activateInterception()
         }
     }
 
     private static func loadMappings() -> [String: String] {
         return [
             "/v1/employee/all": "employees.json",
-            "/v1/role/all": "roles.json"
+            "/v1/role/all": "roles.json",
+            "/v2/top-headlines": "top-news-mock.json"
         ]
     }
 }
