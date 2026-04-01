@@ -101,7 +101,7 @@
 			mainGroup = 608158952E36AC7F00C6E1BD;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				608158AC2E36ADBE00C6E1BD /* XCRemoteSwiftPackageReference "MocktailKit" */,
+				608158AC2E36ADBE00C6E1BD /* XCLocalSwiftPackageReference "../" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6081589F2E36AC7F00C6E1BD /* Products */;
@@ -334,21 +334,17 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		608158AC2E36ADBE00C6E1BD /* XCRemoteSwiftPackageReference "MocktailKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/leowirasanto2/MocktailKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		608158AC2E36ADBE00C6E1BD /* XCLocalSwiftPackageReference "../" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../";
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		608158AD2E36ADBE00C6E1BD /* MocktailKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 608158AC2E36ADBE00C6E1BD /* XCRemoteSwiftPackageReference "MocktailKit" */;
+			package = 608158AC2E36ADBE00C6E1BD /* XCLocalSwiftPackageReference "../" */;
 			productName = MocktailKit;
 		};
 /* End XCSwiftPackageProductDependency section */
