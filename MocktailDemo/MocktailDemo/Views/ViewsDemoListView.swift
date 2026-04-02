@@ -13,11 +13,13 @@ struct DemoListView: View {
     enum DemoType: Identifiable {
         case employee
         case news
-        
+        case dotaHeroes
+
         var id: String {
             switch self {
             case .employee: return "employee"
             case .news: return "news"
+            case .dotaHeroes: return "dotaHeroes"
             }
         }
     }
@@ -62,6 +64,17 @@ struct DemoListView: View {
                             )
                         }
                         .buttonStyle(.plain)
+
+                        // Dota Heroes Demo
+                        NavigationLink(value: DemoType.dotaHeroes) {
+                            DemoCardContentView(
+                                title: "Dota Heroes Demo",
+                                description: "OpenDota API — intercept hero list with mock data",
+                                icon: "shield.fill",
+                                gradientColors: [.teal, .green]
+                            )
+                        }
+                        .buttonStyle(.plain)
                     }
                     
                     // Info Section
@@ -91,6 +104,8 @@ struct DemoListView: View {
                     EmployeeDemoView()
                 case .news:
                     NewsDemoView()
+                case .dotaHeroes:
+                    DotaHeroesDemoView()
                 }
             }
         }

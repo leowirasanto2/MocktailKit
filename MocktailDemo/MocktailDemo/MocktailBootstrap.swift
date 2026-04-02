@@ -20,7 +20,8 @@ public enum MocktailBootstrap {
         return [
             "/v1/employee/all": "employees.json",
             "/v1/role/all": "roles.json",
-            "/v2/top-headlines": "top-news-mock.json"
+            "/v2/top-headlines": "top-news-mock.json",
+            "/api/heroes": "dota-heroes-mock.json"
         ]
     }
 }
